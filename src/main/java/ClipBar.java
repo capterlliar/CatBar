@@ -1,23 +1,24 @@
 import javafx.scene.layout.HBox;
 
-public class ClipBar {
+public class ClipBar extends HBox {
     private int height = 50;
     private int width = 800;
-    private HBox clipBar;
 
     public ClipBar(){
-        this.clipBar = getHBox();
+        this.getHBox();
+        this.addClipContent();
+        this.addClipContent();
+        this.addClipContent();
+        this.addClipContent();
     }
 
-    public HBox getClipBar(){
-        return clipBar;
+    public void getHBox(){
+        this.setPrefHeight(height);
+        this.setPrefWidth(width);
+        this.setStyle("-fx-background-color:rgba(255,255,255,1)");
     }
 
-    public HBox getHBox(){
-        HBox hBox = new HBox();
-        hBox.setPrefHeight(height);
-        hBox.setPrefWidth(width);
-        hBox.setStyle("-fx-background-color:rgba(255,255,255,1)");
-        return hBox;
+    private void addClipContent() {
+        this.getChildren().add(new ClipContent());
     }
 }

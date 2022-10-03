@@ -1,5 +1,5 @@
+import Utils.DragUtil;
 import javafx.application.Application;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -7,8 +7,6 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-
-import Utils.DragUtil;
 
 public class GUI extends Application {
     Stage stage;
@@ -21,8 +19,7 @@ public class GUI extends Application {
         this.stage = stage;
         HBox background = new HBox();
 
-        ClipBar clipBar = new ClipBar();
-        background.getChildren().add(clipBar.getHBox());
+        background.getChildren().add(new ClipBar());
 
         Pane menuBar = getMenuBar();
         DragUtil.addDragListener(stage, menuBar);
