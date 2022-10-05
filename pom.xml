@@ -23,7 +23,7 @@
             <artifactId>sample</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/src/main/resources/ConsoleApplication4.dll</systemPath>
+            <systemPath>${project.basedir}/src/main/resources/libuntitled.dll</systemPath>
         </dependency>
     </dependencies>
 
