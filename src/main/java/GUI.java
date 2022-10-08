@@ -19,7 +19,8 @@ public class GUI extends Application {
         this.stage = stage;
         HBox background = new HBox();
 
-        background.getChildren().add(new ClipBar());
+        ClipBar clipBar = new ClipBar();
+        background.getChildren().add(clipBar);
 
         Pane menuBar = getMenuBar();
         DragUtil.addDragListener(stage, menuBar);
@@ -32,6 +33,21 @@ public class GUI extends Application {
         stage.getIcons().add(new Image(this.getClass().getResourceAsStream("/cat.png")));
         stage.setAlwaysOnTop(true);
         stage.show();
+
+        new com.sun.glass.ui.ClipboardAssistance(com.sun.glass.ui.Clipboard.SYSTEM) {
+            @Override
+            public void contentChanged() {
+                int res = 0;
+                try {
+                    res = ClipManager.addText();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                if(res != -1){
+                    clipBar.setTextToContent(res - 1, ClipManager.getText());
+                }
+            }
+        };
     }
 
     public Pane getMenuBar(){

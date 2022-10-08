@@ -13,6 +13,8 @@
     -fx-padding:5px;
     -fx-border-color:rgba(123,186,238,0.5);
     -fx-border-width: 0 1px 0 0;
+    -fx-pref-height: 50px;
+    -fx-pref-width: 50px;
 }
 .clipContent:hover{
     -fx-background-color:rgba(123,186,238,0.3);
@@ -24,7 +26,14 @@
     -fx-padding:5px;
     -fx-border-color:rgba(123,186,238,0.5);
     -fx-border-width: 0 1px 0 0;
+    -fx-pref-height: 50px;
+    -fx-pref-width: 50px;
 }
 .clipContent2:hover{
     -fx-background-color:rgba(123,186,238,0.3);
+}
+
+.clipBar{
+    -fx-pref-height: 50px;
+    -fx-pref-width: 600px;
 }
