@@ -30,7 +30,7 @@ public class ClipContent extends StackPane {
 
     private void deleteClipContent() {
         this.label.setText("");
-        ClipManager.deleteText(this.id);
+        ClipManager.deleteText(this.id, this.label.getText());
         this.setDisable(true);
     }
 
